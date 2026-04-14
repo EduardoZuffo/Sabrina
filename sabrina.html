@@ -72,8 +72,6 @@ position: relative; z-index: 2;
 font-family: ‘Cinzel’, serif; font-size: clamp(2.4rem, 6vw, 4.8rem);
 font-weight: 700; line-height: 1.15; letter-spacing: .04em;
 color: var(–gold-light);
-background: linear-gradient(135deg, var(–gold-light) 0%, #ffffff 45%, var(–flame-3) 100%);
--webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 opacity: 0; animation: fade-up .9s .55s forwards; position: relative; z-index: 2;
 }
 .hero-tagline {
@@ -123,7 +121,7 @@ opacity: 0; animation: fade-in 1s 2.2s forwards;
 
 /* ── SHARED ── */
 .section-label { font-family:‘Cinzel’,serif; font-size:.7rem; letter-spacing:.4em; text-transform:uppercase; color:var(–gold); margin-bottom:1rem; opacity:.8; }
-.section-title { font-family:‘Cinzel’,serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:600; line-height:1.25; letter-spacing:.03em; color: var(–gold-light); background:linear-gradient(135deg,var(–gold-light),var(–flame-3)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:2rem; }
+.section-title { font-family:‘Cinzel’,serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:600; line-height:1.25; letter-spacing:.03em; color: var(–gold-light); margin-bottom:2rem; }
 .section-body { font-size:1.1rem; font-weight:300; color:var(–white-dim); max-width:680px; margin:0 auto; line-height:1.9; }
 
 /* ── SOBRE ── */
@@ -196,6 +194,20 @@ footer p { font-family:‘Cinzel’,serif; font-size:.65rem; letter-spacing:.25e
 .step-num    { width:50px; height:50px; font-size:.9rem; }
 .step:not(:last-child)::after { left:24px; }
 }
+
+/* Gradient text — only when truly supported */
+@supports (-webkit-background-clip: text) {
+.hero-name {
+background: linear-gradient(135deg, #e8cc7a 0%, #ffffff 45%, #c084fc 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.section-title {
+background: linear-gradient(135deg, #e8cc7a, #c084fc);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+}
 </style>
 
 </head>
@@ -222,7 +234,7 @@ footer p { font-family:‘Cinzel’,serif; font-size:.65rem; letter-spacing:.25e
   </p>
 
   <div class="hero-services">
-    <a href="#card-psico">Psicoterapia!!!!!!!!!!!!!!</a>
+    <a href="#card-psico">Psicoterapia</a>
     <a href="#card-regressao">Regressão</a>
     <a href="#card-theta">Theta Healing</a>
     <a href="#card-floral">Terapia Floral</a>
